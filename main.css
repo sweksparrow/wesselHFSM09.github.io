@@ -1,6 +1,32 @@
-#map {
-    height: 500px;
+   #map {
+    height: 800px;
     width:100%;
    } 
 
-   
+   body {
+    font-family: Mansalva;
+    margin: 0;
+  }
+  
+  /* Header/Logo Title */
+  .header {
+    padding: 40px;
+    text-align: center;
+    background: #01042d;
+    color: white;
+    font-size: 20px;
+  }
+  
+  /* Page Content */
+  .content {padding:20px;}
+
+  a {
+    color: #f0008c;
+  }
+  a:visited {
+    color: #6600f4;
+  }
+  a:hover, a:active, a:focus {
+    color:#c900d4
+    ;
+  }
