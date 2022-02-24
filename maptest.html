@@ -1,0 +1,46 @@
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+        <title> webcartografie Myrthe Koelemeij </title>
+    </head>
+    <body> 
+        <div><h1> Welkom </h1></div>
+
+        <div id="map"></div>
+        
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"> </script>
+        
+        <script> 
+            // initalize the map
+            const map = L.map('map').setView([51.5073219, -0.1276474], 15);
+        
+            //create baselayer - tiles
+            const backgroundMap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',{
+            attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a>contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 19
+            }
+            );
+
+            backgroundMap.addTo(map);
+
+// markers / pop-ups in the map
+let hamleysmarker = L.marker([51.51289135, -0.13994767]).addTo(map);
+            let waterstonesmarker = L.marker([51.50899445, -0.13587761]).addTo(map);
+            let picadillymarker = L.marker([51.510091, -0.1346461]).addTo(map);
+            let oxfordmarker = L.marker([51.5152681, -0.1420078]).addTo(map);        
+        
+            let popup = "Hamleys is a popular toy shop in London";
+            hamleysmarker.bindPopup(popup);
+            let popup2 = "Waterstones is a bookstore with English origins that sell thousands of books in all categories";
+            waterstonesmarker.bindPopup(popup2);
+            let popup3 = "Picadilly Circus is ...";
+            picadillymarker.bindPopup(popup3);
+            let popup4 = "Oxford Circus is ...";
+            oxfordmarker.bindPopup(popup4); 
+        </script> 
+
+    </body>
+</html>
