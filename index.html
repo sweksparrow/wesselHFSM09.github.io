@@ -167,7 +167,7 @@
 
       geojson.addTo(map);
 
-      fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/data/campingalmere.geojson")
+      fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/campingalmere.geojson")
       .then(response => response.json())
       .then(data => {
         geojson.addData(data);})
