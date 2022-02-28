@@ -5,25 +5,33 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mansalva">
-
+  <link href='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
   <title>Wessel Focke</title>
 
 
 </head>
 <body>
   <div class="header">
-      <h1>Welkom op mijn website</h1>
-      <a href="https://sparrowsdesign.com">Mijn website</a>
+    <h1>Welkom op mijn website</h1>
+    <a href="https://sparrowsdesign.com">Mijn website</a>
   </div>
 
-  <div id="map">
+  <div id="container1">
+    <div id="map">
+    </div>
+  </div>
+  <div id="container2">
+    <div id="maplibre">
+    </div>
   </div>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
-    <script src="js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
+  <script src='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js'></script>
+  <script src="js/main.js"></script>
  
 
 </body>

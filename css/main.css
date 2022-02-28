@@ -1,24 +1,32 @@
-   #map {
-    height: 800px;
-    width:100%;
-   } 
-
    body {
+    display: grid;
+    grid-template-columns: auto 40% 5% 40% auto;
+    grid-template-rows: 250px 50px 500px 50px 500px 50px;
     font-family: Mansalva;
     margin: 0;
   }
-  
-  /* Header/Logo Title */
+
   .header {
     padding: 40px;
     text-align: center;
     background: #01042d;
     color: white;
     font-size: 20px;
+    grid-column: span 5;
   }
   
-  /* Page Content */
-  .content {padding:20px;}
+  #container1{
+    grid-column: 2 / span 1 ;
+    grid-row: 3 / span 1
+  }
+
+  #container2{
+    grid-column: 4 / span 1 ;
+    grid-row: 3 / span 1
+  }
+
+
+/* Links */
 
   a {
     color: #f0008c;
@@ -30,3 +38,17 @@
     color:#c900d4
     ;
   }
+
+  
+
+/* Maps */
+
+#map {
+  height:100%;
+  width:100%;
+}
+
+#maplibre {
+    height:100%;
+    width:100%;
+}

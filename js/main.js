@@ -1,4 +1,6 @@
 
+//Leaflet
+
 const RDnew = new L.Proj.CRS('EPSG:28992', '+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.2369,50.0087,465.658,-0.406857330322398,0.350732676542563,-1.8703473836068,4.0812 +no_defs',
 {     transformation: L.Transformation(-1, -1, 0, 0),
     resolutions: [3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360, 1.680, 0.840, 0.420],
@@ -9,8 +11,8 @@ const RDnew = new L.Proj.CRS('EPSG:28992', '+proj=sterea +lat_0=52.1561605555555
 
 const map = L.map('map', {
     crs: RDnew,
-    zoom: 8, //Zoom scale RD new
-    center: [52.35306223, 5.22863388] //webmercator coördinaten
+    zoom: 7, //Zoom scale RD new
+    center: [52.357, 5.237] //webmercator coördinaten
 });
 
 
@@ -73,7 +75,7 @@ const myGeojson = {
     "geometry": {
         "type": "Polygon",
         "coordinates": [
-        [
+[
             [5.263609886169434,52.344804542009435],
             [5.264489650726318,52.34387381690694],
             [5.2635884284973145,52.34363785531701],
@@ -112,3 +114,18 @@ fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/cam
 .then(data => {
 geojson.addData(data);})
 .catch( error => alert(error))
+
+
+
+//Maplibre
+
+const maplibre = new maplibregl.Map({
+    container: 'maplibre',
+    style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
+    center: [-81.5617078, 28.3824072], // starting position [lng, lat]
+    zoom: 5 // starting zoom
+    });
+
+
+
+//Arcgis
