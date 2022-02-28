@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
-<link rel="stylesheet" href="main.css"/>
+<link rel="stylesheet" href="css/main.css"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mansalva">
 
 <title>Wessel Focke</title>
@@ -167,7 +167,7 @@
 
       geojson.addTo(map);
 
-      fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/campingalmere.geojson")
+      fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/data/campingalmere.geojson")
       .then(response => response.json())
       .then(data => {
         geojson.addData(data);})
