@@ -128,4 +128,25 @@ const maplibre = new maplibregl.Map({
 
 
 
-//Arcgis
+//Cesium
+
+Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NDZjZWEyMS0zOWMyLTRiNjUtYmJlNi05MmJjZDZmMzcxYzEiLCJpZCI6ODQ5NDcsImlhdCI6MTY0NjY4ODQ3NH0.aZIlkHwIVcvSz-iYFHqIOMPlhQPOyl7jyumdOBdSBs8';
+
+// Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
+const viewer = new Cesium.Viewer('cesiumContainer', {
+  terrainProvider: Cesium.createWorldTerrain()
+});    
+// Add Cesium OSM Buildings, a global 3D buildings layer.
+const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());   
+// Fly the camera to San Francisco at the given longitude, latitude, and height.
+viewer.camera.flyTo({
+  destination : Cesium.Cartesian3.fromDegrees(-81.5617078, 28.3824072, 400),
+  orientation : {
+    heading : Cesium.Math.toRadians(0.0),
+    pitch : Cesium.Math.toRadians(-15.0),
+  }
+});
+
+
+//Kepler
+
