@@ -140,7 +140,7 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());   
 // Fly the camera to San Francisco at the given longitude, latitude, and height.
 viewer.camera.flyTo({
-  destination : Cesium.Cartesian3.fromDegrees(-81.5617078, 28.3824072, 400),
+  destination : Cesium.Cartesian3.fromDegrees(2.779866995187583, 48.86634734600105, 300),
   orientation : {
     heading : Cesium.Math.toRadians(0.0),
     pitch : Cesium.Math.toRadians(-15.0),
@@ -148,5 +148,8 @@ viewer.camera.flyTo({
 });
 
 
-//Kepler
+//Turf
+
+
+
 

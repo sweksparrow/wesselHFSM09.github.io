@@ -1,7 +1,7 @@
    body {
     display: grid;
-    grid-template-columns: auto 40% 5% 40% auto;
-    grid-template-rows: 250px 50px 500px 50px 500px 50px;
+    grid-template-columns: 7.5% 40% 5% 40% 7.5%;
+    grid-template-rows: 250px 50px 500px 50px 500px 50px 500px 50px;
     font-family: Mansalva;
     margin: 0;
     background-color: #1b1d3b;
@@ -28,13 +28,13 @@
   }
 
   #container3{
-    grid-column: 2 / span 1 ;
+    grid-column: 2 / span 3 ;
     grid-row: 5 / span 1
   }
 
   #container4{
-    grid-column: 4 / span 1 ;
-    grid-row: 5 / span 1
+    grid-column: 2 / span 3 ;
+    grid-row: 7 / span 1
   }
 
 
@@ -58,9 +58,12 @@
 #map {
   height:100%;
   width:100%;
+  border-radius: 25px;
 }
 
 #maplibre {
     height:100%;
     width:100%;
+    border-radius: 25px;
 }
+
