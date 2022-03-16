@@ -125,7 +125,7 @@
         const maplibre = new maplibregl.Map({
             container: 'maplibre',
             style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-            center: [-81.5617078, 28.3824072], // starting position [lng, lat]
+            center: [5.263609886169434,52.344804542009435], // starting position [lng, lat]
             zoom: 5 // starting zoom
         });
 
@@ -159,7 +159,7 @@
             map.setView( [52.3665725, 5.2508973], 12)
 
 
-        fetch('https://geodata.nationaalgeoregister.nl/locatieserver/lookup?fl=*&id=adr-b44261abe7c677ea826faf8447ab664d')
+        fetch('https://geodata.nationaalgeoregister.nl/locatieserver/lookup?fl=*&id=')
         .then(response => response.json())
         .then(data =>{
             const wkt = data.response.docs[0].geometrie_ll
@@ -176,8 +176,56 @@
         })}
 
 
+        const arrayVanPlaatsnamen = ['Amsterdam', 'Almere', 'Lelystad', 'Hoofddorp', 'Nieuw Vennep']
+
+        for (let index = 0; index < arrayVanPlaatsnamen.length; index++) {
+            const woonplaats = arrayVanPlaatsnamen[index];
+
+        const node = document.createElement("button");
+
+        node.className = "button";
+        node.id = woonplaats ;
+        const textnode = document.createTextNode(woonplaats);
+        node.appendChild(textnode);
+
+        document.getElementById("header").appendChild(node);
+
+        node.addEventListener('click', function (){
+            console.log(node.id)
+
+            
+            fetch('https://geodata.nationaalgeoregister.nl/locatieserver/free?bq=type:woonplaats&q=' + node.id)
+            .then(response => response.json())
+            .then(data =>{
+                let id = data.response.docs[0].id
+
+                fetch('https://geodata.nationaalgeoregister.nl/locatieserver/lookup?fl=*&id=' + id)
+                .then(response => response.json())
+                .then(data =>{
+                    const wkt = data.response.docs[0].geometrie_ll
+        
+                    const geojsondataAlmere = Terraformer.wktToGeoJSON(wkt)  
+                    console.log(geojsondataAlmere)  
+                    geoJsonLayerAlmere.addData(geojsondataAlmere);
+        
+                })
+            
+            
+            })
 
 
+        })}
 
+//WMS uit eigen server
+        const eigenServer = L.tileLayer.wms('http://localhost:8001/geoserver/hsfm09/wms', {
+            'layers': 'hsfm09:bevolkingskernenin2011',
+            'styles': 'hsfm09:stijltje',
+            'srs': 'EPSG:28992',
+            'format': 'image/png',
+            'opacity': '0.6',
+            'transparent': true,
+        }).addTo(map);
 
-
+        //?service=WMS&version=1.1.0&request=GetMap&layers=hsfm09:bevolkingskernenin2011&
+        //styles=&bbox=634.5732789819012,306594.5543000576,284300.0254094796,636981.7698870846&width=659&
+        //height=768&srs=EPSG:28992&format=application/openlayers        
