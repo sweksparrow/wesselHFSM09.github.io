@@ -1,55 +1,66 @@
 <html>
-<head>
-
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mansalva">
-  <link href='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css' rel='stylesheet' />
-  <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+  <head>
 
 
-  <title>Wessel Focke</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mansalva">
+    <link href='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/terraformer"></script>
+    <script src="https://unpkg.com/@terraformer/wkt"></script>
 
 
-</head>
-<body>
-  <div class="header">
-    <h1>Welkom op mijn website</h1>
-    <a href="https://sparrowsdesign.com">Mijn website</a>
-  </div>
+    <title>Wessel Focke</title>
 
-  <div id="container1">
-    <div id="map">
+
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <h1>Welkom op mijn website</h1>
+        <a href="https://sparrowsdesign.com">Mijn website</a>
+      </div>
+      <br>
+      <div>
+        <button class="button" id="zoomin" onclick="zoomin()">Inzoomen</button>
+      </div>
     </div>
-  </div>
 
-  <div id="container2">
-    <div id="maplibre">
+    <div id="container1">
+      <div id="map">
+      </div>
+      <div>
+        <h1 id="interactivetitle"></h1>
+      </div>
     </div>
-  </div>
 
-  <div id="container3">
-    <div id="cesiumContainer">
+    <div id="container2">
+      <div id="maplibre">
+      </div>
     </div>
-  </div>
 
-  <div id="container4">
-    <iframe src="https://kepler.gl/#/demo?mapUrl=https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/kepler.json" style="width: 100%; height: 100%; " frameBorder="0" ></iframe>
-  </div>
+    <div id="container3">
+      <div id="cesiumContainer">
+      </div>
+    </div>
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
-  <script src='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js'></script>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
-  <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-  <script src="js/main.js"></script>
- -
+    <div id="container4">
+      <iframe src="https://kepler.gl/#/demo?mapUrl=https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/kepler.json" style="width: 100%; height: 100%; " frameBorder="0" ></iframe>
+    </div>
 
-</body>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.5/proj4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js"></script>
+    <script src='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.js'></script>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Cesium.js"></script>
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
 </html>
 
