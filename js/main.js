@@ -127,7 +127,7 @@
             style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
             center: [-81.5617078, 28.3824072], // starting position [lng, lat]
             zoom: 5 // starting zoom
-            });
+        });
 
 
 
@@ -137,43 +137,43 @@
 
         // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
         const viewer = new Cesium.Viewer('cesiumContainer', {
-        terrainProvider: Cesium.createWorldTerrain()
+            terrainProvider: Cesium.createWorldTerrain()
         });    
         // Add Cesium OSM Buildings, a global 3D buildings layer.
         const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());   
         // Fly the camera to San Francisco at the given longitude, latitude, and height.
         viewer.camera.flyTo({
-        destination : Cesium.Cartesian3.fromDegrees(2.779866995187583, 48.86634734600105, 300),
-        orientation : {
-            heading : Cesium.Math.toRadians(0.0),
-            pitch : Cesium.Math.toRadians(-15.0),
-        }
+            destination : Cesium.Cartesian3.fromDegrees(2.779866995187583, 48.86634734600105, 300),
+            orientation : {
+                heading : Cesium.Math.toRadians(0.0),
+                pitch : Cesium.Math.toRadians(-15.0),
+            }
         });
 
 
 //Interactive
 
-const geoJsonLayerAlmere = L.geoJSON().addTo(map)
+        const geoJsonLayerAlmere = L.geoJSON().addTo(map)
 
-function zoomin(){
-    map.setView( [52.3665725, 5.2508973], 12)
+        function zoomin(){
+            map.setView( [52.3665725, 5.2508973], 12)
 
 
-fetch('https://geodata.nationaalgeoregister.nl/locatieserver/lookup?fl=*&id=adr-b44261abe7c677ea826faf8447ab664d')
-.then(response => response.json())
-.then(data =>{
-    const wkt = data.response.docs[0].geometrie_ll
+        fetch('https://geodata.nationaalgeoregister.nl/locatieserver/lookup?fl=*&id=adr-b44261abe7c677ea826faf8447ab664d')
+        .then(response => response.json())
+        .then(data =>{
+            const wkt = data.response.docs[0].geometrie_ll
 
-    const geojsondataAlmere = Terraformer.wktToGeoJSON(wkt)  
-    console.log(geojsondataAlmere)  
-    geoJsonLayerAlmere.addData(geojsondataAlmere);
+            const geojsondataAlmere = Terraformer.wktToGeoJSON(wkt)  
+            console.log(geojsondataAlmere)  
+            geoJsonLayerAlmere.addData(geojsondataAlmere);
 
-    const naam = data.response.docs[0].gemeentenaam
+            const naam = data.response.docs[0].gemeentenaam
 
-    const titel = document.getElementById('interactivetitle')
-    titel.style.color = 'white'
-    titel.append(naam)
-})}
+            const titel = document.getElementById('interactivetitle')
+            titel.style.color = 'white'
+            titel.append(naam)
+        })}
 
 
 
