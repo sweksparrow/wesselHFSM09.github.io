@@ -41,6 +41,15 @@
     grid-row: 7 / span 1
   }
 
+  #container5{
+    grid-column: 2 / span 1;
+    grid-row: 9 / span 1
+  }
+
+  #container6{
+    grid-column: 4 / span 1;
+    grid-row: 9 / span 1
+  }
 
 /*Interactief*/
 
