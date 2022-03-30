@@ -68,6 +68,46 @@
             'transparent': true
         }).addTo(map);
 
+        // Lagen aan en uit zetten
+        window.toggle = false;{
+        }
+
+        function toggleWMS() {
+            if(!toggle) {
+              map.removeLayer(cbs);
+              woonplaats.remove
+              huis1.remove
+              huis2.remove
+              oudhuis1.remove
+              oudhuis2.remove
+            } else {
+              map.addLayer(cbs);
+              woonplaats.add
+              huis1.add
+              huis2.add
+              oudhuis1.add
+              oudhuis2.add
+            }
+            toggle = !toggle;
+          }
+
+          function togglePunten() {
+            if(!toggle) {
+              woonplaats.remove
+              huis1.remove
+              huis2.remove
+              oudhuis1.remove
+              oudhuis2.remove
+            } else {
+                woonplaats.add
+                huis1.add
+                huis2.add
+                oudhuis1.add
+                oudhuis2.add
+            }
+            toggle = !toggle;
+          }
+
         const myGeojson = {
             "type": "FeatureCollection",
             "features": [
@@ -117,7 +157,18 @@
         geojson.addData(data);})
         .catch( error => alert(error))
 
+        //GeoJson uitzetten
+        window.toggle = false;{
+        }
 
+        function togglePoints() {
+            if(!toggle) {
+              map.removeLayer(geojson);
+            } else {
+              map.addLayer(geojson);
+            }
+            toggle = !toggle;
+          }
 
 
     //Maplibre
@@ -188,7 +239,7 @@
         const textnode = document.createTextNode(woonplaats);
         node.appendChild(textnode);
 
-        document.getElementById("header").appendChild(node);
+        document.getElementById("container1").appendChild(node);
 
         node.addEventListener('click', function (){
             console.log(node.id)
@@ -205,8 +256,9 @@
                     const wkt = data.response.docs[0].geometrie_ll
         
                     const geojsondataAlmere = Terraformer.wktToGeoJSON(wkt)  
-                    console.log(geojsondataAlmere)  
+                    var center = Terraformer.wktToGeoJSON(data.response.docs[0].centroide_ll)  
                     geoJsonLayerAlmere.addData(geojsondataAlmere);
+                    map.setView( center.coordinates.reverse(), 4)
         
                 })
             
