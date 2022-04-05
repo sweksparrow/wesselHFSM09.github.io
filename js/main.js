@@ -75,38 +75,14 @@
         function toggleWMS() {
             if(!toggle) {
               map.removeLayer(cbs);
-              woonplaats.remove
-              huis1.remove
-              huis2.remove
-              oudhuis1.remove
-              oudhuis2.remove
+
             } else {
               map.addLayer(cbs);
-              woonplaats.add
-              huis1.add
-              huis2.add
-              oudhuis1.add
-              oudhuis2.add
+
             }
             toggle = !toggle;
           }
 
-          function togglePunten() {
-            if(!toggle) {
-              woonplaats.remove
-              huis1.remove
-              huis2.remove
-              oudhuis1.remove
-              oudhuis2.remove
-            } else {
-                woonplaats.add
-                huis1.add
-                huis2.add
-                oudhuis1.add
-                oudhuis2.add
-            }
-            toggle = !toggle;
-          }
 
         const myGeojson = {
             "type": "FeatureCollection",
@@ -179,6 +155,130 @@
             center: [5.263609886169434,52.344804542009435], // starting position [lng, lat]
             zoom: 5 // starting zoom
         });
+
+        maplibre.on('load', function () {
+            maplibre.addSource('route', {
+            'type': 'geojson',
+            'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+            'type': 'LineString',
+            'coordinates': [
+                [
+                    5.25146484375,
+                    52.348763181988105
+                  ],
+                  [
+                    4.54833984375,
+                    50.51342652633956
+                  ],
+                  [
+                    4.76806640625,
+                    51.45400691005982
+                  ],
+                  [
+                    6.240234374999999,
+                    51.39920565355378
+                  ],
+                  [
+                    6.04248046875,
+                    50.41551870402678
+                  ],
+                  [
+                    6.591796875,
+                    50.41551870402678
+                  ],
+                  [
+                    7.14111328125,
+                    51.15178610143037
+                  ],
+                  [
+                    8.76708984375,
+                    51.09662294502995
+                  ],
+                  [
+                    9.0966796875,
+                    50.233151832472245
+                  ],
+                  [
+                    8.19580078125,
+                    52.40241887397332
+                  ],
+                  [
+                    7.03125,
+                    51.05520733858494
+                  ],
+                  [
+                    8.942871093749998,
+                    50.98609893339354
+                  ],
+                  [
+                    9.25048828125,
+                    50.162824333817284
+                  ],
+                  [
+                    9.84375,
+                    50.190967765585604
+                  ],
+                  [
+                    9.667968749999998,
+                    52.335339071889386
+                  ],
+                  [
+                    9.9755859375,
+                    50.14874640066278
+                  ],
+                  [
+                    10.634765625,
+                    50.162824333817284
+                  ],
+                  [
+                    10.30517578125,
+                    52.281601868071434
+                  ],
+                  [
+                    10.810546875,
+                    50.162824333817284
+                  ],
+                  [
+                    11.35986328125,
+                    50.162824333817284
+                  ],
+                  [
+                    11.3818359375,
+                    52.07950600379697
+                  ],
+                  [
+                    13.33740234375,
+                    52.02545860348814
+                  ],
+                  [
+                    13.205566406249998,
+                    50.20503326494332
+                  ],
+                  [
+                    11.57958984375,
+                    50.17689812200107
+                  ]
+            ]
+            }
+            }
+            });
+            maplibre.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': 'route',
+            'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+            },
+            'paint': {
+            'line-color': '#FFFFFF',
+            'line-width': 8
+            }
+            });
+            });
 
 
 
