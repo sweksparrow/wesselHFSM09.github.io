@@ -114,8 +114,8 @@
 
         const geojsonMarkerOptions = {
             radius: 8,
-            fillColor: "#ff7800",
-            color: "#000",
+            fillColor: "cyan",
+            color: "darkgreen",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
@@ -127,7 +127,7 @@
 
         geojson.addTo(map);
 
-        fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/campingalmere.geojson")
+        fetch("https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/punten.geojson")
         .then(response => response.json())
         .then(data => {
         geojson.addData(data);})

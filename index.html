@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mansalva">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost">
     <link href='https://unpkg.com/maplibre-gl@2.1.6/dist/maplibre-gl.css' rel='stylesheet' />
     <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.91/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
@@ -21,18 +22,39 @@
   <body>
     <div id="header">
       <div>
-        <h1>Welkom op mijn website</h1>
+        <h1>Sparrows Design</h1>
+        <p style="text-align: center; color: white">
+          Op deze pagina laat ik al mijn webcartografie kennis zien.
+          <br>
+          Benieuwd naar mijn andere werk? Check de rest van mijn <a href="https://sparrowsdesign.com">website</a>
+        </p>
       </div>
+    </div>
+
+    <div id="titelvak1">
+      <p id="titel">Leaflet</p>
     </div>
 
     <div id="container1">
       <div id="map">
       </div>
       <div>
-        <button onclick="toggleWMS();" class="button">WMS</button>        
-        <button onclick="togglePunten();" class="button">Puntjes</button>        
-        <button onclick="togglePoints();" class="button">Campings</button>
+        <button onclick="toggleWMS();" class="button">WMS</button>             
+        <button onclick="togglePoints();" class="button">GeoJSON punten</button>
       </div>    
+    </div>
+
+    <div id="tekstvak1">
+      <p>
+         Aan de rechterkant is een <b>MapLibre</b> kaart te vinden. Op deze kaart heb ik een <b>GeoJSON laag</b> geladen waarin ik Hallo heb geschreven met een aantal punten.<br><br>
+         Deze data laat verder niet veel zien, maar ik vond het wel grappig om dit zo op een kaart te kunnen schrijven. Daarbij heb ik niet enorm veel research gedaan naar MapLibre
+         waardoor ik niet echt wist hoe ik makkelijk de achtergrondkaart moest veranderen. Waar deze gekleurde vlakken met dikke witte lijnen voor kunnen worden gebruikt is voor mij
+         nog steeds een groot raadsel.
+      </p>
+    </div>
+
+    <div id="titelvak2">
+      <p id="titel">MapLibre</p>
     </div>
 
     <div id="container2">
@@ -40,21 +62,71 @@
       </div>
     </div>
 
+    <div id="tekstvak2">
+      <p>
+         Op de kaart aan de linkerkant is <b>Leaflet</b> gebruikt. Op deze kaart zijn meerdere datasets geladen. Zo is er een <b>WFS</b> laag op te vinden, drie <b>GeoJSON punten</b>,
+         een <b>GeoJSON polygoon</b>, <b>Leaflet markers</b> met daarbij een polygoon die ze allemaal verbindt, een <b>Leaflet cirkel</b> 
+         en als laatste <b>geodata van het nationaalgeoregister</b> die automatisch worden ingeladen wanneer je op de knoppen klikt. 
+         Tevens kan je de GeoJSON punten en de WMS laag aan en uit zetten door middel van de bijbehorende knoppen. 
+         Als laatste zit er eigenlijk ook nog een <b>WMS</b> laag op deze kaart, echter wordt deze gehost via een lokale server waardoor deze niet kan worden laten zien.
+      </p>
+    </div>
+
+    <div id="titelvak3">
+      <p id="titel">Cesium</p>
+    </div>
+
     <div id="container3">
       <div id="cesiumContainer">
       </div>
+    </div>
+
+    <div id="tekstvak3">
+      <p>
+       <b>Hierboven</b> zijn twee kaarten te zien. De linkerkaart is van Kepler. Kepler is een tool waarmee je data kan inladen en direct op de kaart kan visualiseren. Deze heb ik 
+       op de website gezet door het te embedden in een iFrame. Dit zorgt er dus eigenlijk voor dat er een website in mijn website wordt geladen. Als vierde en laatste kaart heb ik met javascript
+       Cesium op mijn website gezet. Het is dus een javascript API die een 3D map viewer inlaadt. Op het moment staat deze ingesteld op Disneyland Parijs omdat ik daar erg vaak kom en het
+       een leuke plek vind! :)
+      </p>
+    </div>
+
+    <div id="titelvak4">
+      <p id="titel">Kepler</p>
     </div>
 
     <div id="container4">
       <iframe src="https://kepler.gl/#/demo?mapUrl=https://raw.githubusercontent.com/sweksparrow/wesselfocke/master/data/kepler.json" style="width: 100%; height: 100%; " frameBorder="0" ></iframe>
     </div>
 
+    <div id="tekstvak4">
+      <p>
+        <b>Hieronder</b> zijn twee datavisualisaties te vinden. De linker heb ik een tijdje terug gemaakt om aan Myrthe uit te leggen welke mensen om mij heen tot welke groep behoren. 
+        Ik vond het leuk om dit te visualiseren op deze manier omdat je nu op de groepsnamen kan klikken en in één oogopslag kan zien wie er bij die groep horen. In de lijst van
+        datavisualisatie tools zag ik <b>flourish</b> en dacht 'die wil ik op mijn site hebben', niet wetende dat ik dus al een account had. De andere datavisualisatie die ik heb gebruikt
+        is van de website <b>Infogram</b>. Infogram heeft mooie visualisatie tools die het ook direct voor je animeren, dit heb ik dus uitgetest met een enorm simpele dataset van
+        de hoeveelheid films die ik in coronatijd heb gezien. In 2019 waren dit er nog 12, terwijl het er in 2020 nog maar 3 waren na het sluiten van de bioscopen. Ze zijn beiden met javascript
+        ingeladen, dus met Flourish.js en infogram.js.
+      </p>
+    </div>
+
+    <div id="titelvak5">
+      <p id="titel">Flourish</p>
+    </div>
+
     <div id="container5">
       <div class="flourish-embed flourish-chord" data-src="visualisation/7973074"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
     </div>
 
+    <div id="titelvak6">
+      <p id="titel">Infogram</p>
+    </div>
+
     <div id="container6">
       <div class="infogram-embed" data-id="ba48a567-8959-4d03-8607-7a1e2d7876b6" data-type="interactive" data-title="Pictoral Bar Chart"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/ba48a567-8959-4d03-8607-7a1e2d7876b6" style="color:#989898!important;text-decoration:none!important;" target="_blank">Pictoral Bar Chart</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>    
+    </div>
+
+    <div id="footer">
+      <p style="text-align: center; font-size: 20px">Benieuwd naar meer?<br>Check de rest van mijn <a href="https://sparrowsdesign.com">website</a><br>of neem contact met mij op via wesselfocke@hotmail.com</p>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
